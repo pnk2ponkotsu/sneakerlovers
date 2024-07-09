@@ -1,24 +1,32 @@
-# README
+# SneakerLovers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+スニーカー好きが集まり、自分のおススメや最近購入したスニーカーを紹介するためのコミュニティサイトです
 
-Things you may want to cover:
+### このテーマを選んだ理由
+自分が趣味でスニーカーを集めており、周りのスニーカー事情が気になっていました。<br>
+そこで、自分以外の人はどのような方法でスニーカーを入手し、どのように管理しているのかを気軽に情報共有ができる場があると便利だと考えました。<br>
+また、現在スニーカーを集めている人だけではなく、これからスニーカーを集めようと思っている人にも必要な情報を共有できると考え、このテーマにしました。<br>
 
-* Ruby version
+### ターゲットユーザー
+・現在スニーカーを集めている人<br>
+・これからスニーカーを集めようと思っている人<br>
+・もともとファッションが好きでスニーカーを探している人<br>
 
-* System dependencies
+### 主な利用シーン
+・新しいスニーカーを購入した時<br>
+・自分のオススメを共有したい時<br>
+・好みのスニーカーを探したい時<br>
 
-* Configuration
+### 設計書
+今後作成予定
 
-* Database creation
+### 開発環境
+・OS：Linux(CentOS)<br>
+・言語：HTML,CSS,JavaScript,Ruby,SQL<br>
+・フレームワーク：Ruby on Rails<br>
+・JSライブラリ：jQuery<br>
+・IDE：Cloud9<br>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 使用素材
