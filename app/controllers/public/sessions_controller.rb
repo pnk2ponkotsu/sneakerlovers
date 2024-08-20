@@ -18,7 +18,15 @@ class Public::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
+  def after_sign_in_path
+    users_path
+  end
+
+  def after_sign_out_path
+    new_user_session_path
+  end
+
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

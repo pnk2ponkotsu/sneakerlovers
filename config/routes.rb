@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root to: "homes#top"
+    resources :users, only:[:index, :show, :edit, :uodate]
+    resources :shooes, only:[:new, :create, :index, :show, :edit, :uppdate, :destory]
+    resources :post_images, only: [:new, :create, :index, :show, :destroy]
+    resources :post_comments, only: [:create]
   end
 
   #管理者側

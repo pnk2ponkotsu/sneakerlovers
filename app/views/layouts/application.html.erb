@@ -10,7 +10,30 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <% if user_signed_in? %>
+  
+    <!-- header -->
+    <div id="header">
+      <%= render "layouts/header" %>  
+    </div>
+
+      <%= yield %>
+  
+  <% elsif admin_signed_in? %>
+  <!-- ヘッダー -->
+    <div id="header">
+      <%= render "layouts/header" %>
+    </div>
+
+      <%= yield %>
+      
+  <% else %>
+    <!-- ヘッダー -->
+    <div id="header">
+      <%= render "layouts/header" %>
+    </div>
+
+      <%= yield %>
+  
+  <% end %>
 </html>

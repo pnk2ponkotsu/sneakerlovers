@@ -1,0 +1,2 @@
+class Shoo < ApplicationRecord
+end

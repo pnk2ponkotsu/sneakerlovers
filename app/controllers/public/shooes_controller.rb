@@ -1,7 +1,7 @@
 class Public::ShooesController < ApplicationController
 
   def index
-
+    @shoo = Shoo.new
   end
 
   def show
@@ -9,7 +9,9 @@ class Public::ShooesController < ApplicationController
   end
 
   def create
-
+    @shoo = Shoo.new(shoo_params)
+    @shoo.save
+    redirect_to '/users'
   end
 
   def edit
@@ -22,6 +24,12 @@ class Public::ShooesController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+  
+  def shoo_params
+    params.require(:shoo).permit(:title, :body)
   end
 
 end
