@@ -1,0 +1,24 @@
+
+<div>
+ <%= form_with model:@shoo, url: shooes_path, method: :post do |f| %>
+
+ <div class = "image row" %>
+  <p>画像</p>
+  <%= f.file_field :image, accept: "image/*" %>
+ </div>
+
+ <div class = "field row">
+  <p> 　スニーカー名　 </p>
+  <%= f.text_field :title, class: "col-xs-12" %>
+ </div>
+
+ <div class="field row">
+  <p>スニーカーコメント</p>
+  <%= f.text_area :body, class: "col-xs-12" %>
+ </div>
+
+ <div class="actions row">
+  <%= f.submit '投稿' %>
+ </div>
+ <% end %>
+</div>

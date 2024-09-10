@@ -1,1 +1,43 @@
-<p>oooo</p>
+<h2>ユーザーページ</h2>
+<div class = "container">
+ <div class = "row">
+  <div class = "col-md-3">
+   <h2>ユーザー情報</h2>
+   <%= render 'public/users/profile', user: @user %>
+
+   <h2>新規投稿</h2>
+   <%= render 'public/shooes/new', book: @book %>
+  </div>
+
+  <div class = "col-md-8 offset-md-1">
+   <h2>投稿一覧</h2>
+   <table class = "table table-hover table-inverse">
+    <thead>
+     <tr>
+      <th>画像　　　　　　</th>
+      <th>スニーカー名　　</th>
+      <th>ユーザーコメント</th>
+     </tr>
+    </thead>
+
+    <tbody>
+     <% @shooes.each do |shoo| %>
+     <tr>
+      <td>
+        <%= image_tag shoo.get_image(100,100) %>
+        <%= link_to (shoo.user) do %>
+        <% end %>
+      </td>
+      <td>
+       <%= link_to shoo.title,shoo, class: "shoo_#{shoo.id}" %>
+      </td>
+      <td>
+       <%= shoo.body %>
+      </td>
+     </tr>
+     <% end %>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</div>

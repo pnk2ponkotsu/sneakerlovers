@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!, except: [:top]
+  
 
-  def after_sign_in_path
+  def after_sign_in_path_for(resource)
     case resource
       when Admin
         root_path
@@ -12,9 +14,9 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path
     case resource
       when Admin
-        new_user_session_path
+        root_path
       when User
-        new_user_session_path
+        root_path
     end
   end
 

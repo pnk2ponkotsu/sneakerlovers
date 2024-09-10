@@ -1,0 +1,54 @@
+<p>投稿詳細</p>
+<div class = "container" >
+ <div class = "row" >
+  <div class = "col-md-3" >
+   <h2>ユーザー情報</h2>
+ <%= render 'public/users/profile', user: @user %>
+   
+   <h2>新規投稿</h2>
+   <%= render 'public/shooes/new', shoo: @shoo %>
+  </div>
+  
+  <div class = "col-md-9">
+   <h2>投稿詳細</h2>
+   <table class = "table table-hover table-inverse" >
+    <thead>
+     <thead>
+      <tr>
+       <th>ユーザー　　　　　</th>
+       <th>スニーカー名　　　</th>
+       <th>スニーカーコメント</th>
+      </tr>
+     </thead>
+     
+     <tbody>
+      <tr>
+       <td>
+        <%= link_to user_path(@one_shoo.user) do %>
+         <%= image_tag @one_shoo.get_image(100,100) %><br>
+         <%= @one_shoo.user.name %>
+        <% end %>
+       </td>
+       <td>
+        <%= @one_shoo.title %>
+       </td>
+       <td>
+        <%= @one_shoo.body %>
+       </td>
+       <td>
+        <% if user_signed_in? && current_user.id == @one_shoo.user_id %>
+         <%= link_to "編集", edit_shoo_path(@one_shoo.id) %>
+        <% end %>
+       </td>
+       <td>
+        <% if user_signed_in? && current_user.id == @one_shoo.user_id %>
+         <%= link_to "削除", shoo_path(@one_shoo.id), method: :delete %>
+        <% end %>
+       </td>
+      </tr>
+     </tbody>
+    </thead>
+   </table>
+  </div>
+ </div>
+</div>

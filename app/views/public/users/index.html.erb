@@ -1,1 +1,43 @@
-<p>ユーザーインデックス</p>
+<h2>マイページ</h2>
+
+<div class = "container">
+ <div class = "row">
+  <div class = "col-md-3">
+   <h2>ユーザー</h2>
+    <%= render 'public/users/profile', user: current_user %>
+   <br>
+   <br>
+   <h2>新規投稿</h2>
+    <%= render 'public/shooes/new', shoo: @shoo %>
+  </div>
+
+  <div class = "col-md-8 offset-md-1">
+   <h2>ユーザー一覧</h2>
+   <table class = "table table-hover table-inverse">
+    <thead>
+     <tr>
+      <th>画像　　　　　　</th>
+      <th>ユーザー名　　　</th>
+      <th>リンク　　　　　</th>
+     </tr>
+    </thead>
+    
+    <tbody> 
+     <% @users.each do |user| %>
+     <tr>
+      <td>
+       <%= image_tag user.get_image(100,100) %>
+      </td>
+      <td>
+       <%= user.name %>
+      </td>
+      <td>
+       <%= link_to "show", user, class: "user_#{user.id}" %>
+      </td>
+     </tr>
+     <% end %>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</div>

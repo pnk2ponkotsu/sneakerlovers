@@ -2,15 +2,15 @@
   <% if user_signed_in? %>
   　<!-- ユーザーログイン時 -->
   <li>
-   <%= link_to "マイページ", user_path(current_user.id) %>
+   <%= link_to "ホーム", users_path(current_user.id) %>
   </li>
-  
+
+  <li>
+   <%=link_to "投稿一覧", shooes_path %>
+  </li>
+
   <li>
    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  </li>
-    
-  <li>
-   <%=link_to "インデックス", users_path %>
   </li>
 
   <% elsif admin_signed_in? %>
@@ -22,7 +22,7 @@
   <% else %>
     <!-- ログインしていない時  -->
     <li>
-      <%= link_to "ホーム", root_path %>
+      <%= link_to "トップ", root_path %>
     </li>
     <li>
       <%= link_to "新規登録", new_user_registration_path %>

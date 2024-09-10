@@ -1,18 +1,44 @@
-<h1>新規投稿</h1>
+<div class = "container">
+ <div class = "row">
+  <div class = "col-md-3">
+   <h2>ユーザー</h2>
+    <%= render 'public/users/profile', user: current_user %>
 
-<%= form_with model:@shoo, url: '/shooes', method: :get do |f| %>
-  <div class = "field row">
-   <%= f.label :title %>
-   <%= f.text_field :title, class: "col-xs-12" %>
+   <h2>新規投稿</h2>
+    <%= render 'public/shooes/new', shoo: @shoo %>
   </div>
 
-  <div class="field row">
-   <%= f.label :body %>
-   <%= f.text_area :body, class: "col-xs-12" %>
-  </div>
+  <div class = "col-md-9 offset-md-1">
+   <h2>投稿一覧</h2>
+   <table class = "table table-hover table-inverse">
+    <thead>
+     <tr>
+      <th>スニーカー画像　　</th>
+      <th>スニーカー名　　　</th>
+      <th>スニーカーコメント</th>
+      <th>ユーザー名　　　　</th>
+     </tr>
+    </thead>
 
-  <div class="actions row">
-    <%= f.submit class: "btn btn-primary col-xs-12" %>
+    <tbody>
+     <% @shooes.each do |shoo| %>
+     <tr>
+      <td>
+       <%= image_tag shoo.get_image(100,100) %>
+      </td>
+      <td>
+       <%= link_to shoo.title, shoo, class: "shoo_#{shoo.id}" %>
+      </td>
+      <td>
+       <%= shoo.body %>
+      </td>
+      <td>
+       <%= shoo.user.name %>
+      </td>
+     </tr>
+     <% end %>
+    </tbody>
+   </table>
   </div>
-<% end %>
-
+ </div>
+</div>

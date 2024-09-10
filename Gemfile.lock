@@ -93,6 +93,9 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.12.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -111,6 +114,7 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     method_source (1.1.0)
+    mini_magick (4.13.1)
     mini_mime (1.1.5)
     minitest (5.24.1)
     msgpack (1.7.2)
@@ -160,6 +164,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails-i18n (7.0.9)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (6.1.7.8)
       actionpack (= 6.1.7.8)
       activesupport (= 6.1.7.8)
@@ -176,6 +183,8 @@ GEM
       railties (>= 5.2)
     rexml (3.3.1)
       strscan
+    ruby-vips (2.2.1)
+      ffi (~> 1.12)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -244,11 +253,13 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
+  image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7, >= 6.1.7.7)
+  rails-i18n
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring
